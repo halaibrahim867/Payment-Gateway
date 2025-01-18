@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Interfaces\PaymentGatewayInterface;
+use App\Services\PaymobPaymentService;
 use Illuminate\Support\ServiceProvider;
 
 class PaymentServiceProvider extends ServiceProvider
@@ -19,7 +21,6 @@ class PaymentServiceProvider extends ServiceProvider
 //
 //                default => throw new \Exception("Unsupported gateway type"),
 //            };
-
     }
 
     /**
