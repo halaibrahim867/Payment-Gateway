@@ -21,6 +21,8 @@ class PaymentServiceProvider extends ServiceProvider
 //
 //                default => throw new \Exception("Unsupported gateway type"),
 //            };
+
+        $this->app->bind(PaymentGatewayInterface::class, PaymobPaymentService::class);
     }
 
     /**
