@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Interfaces\PaymentGatewayInterface;
+use App\Services\GeideaPaymentService;
 use App\Services\PaymobPaymentService;
 use App\Services\PaypalPaymentService;
 use Illuminate\Support\ServiceProvider;
@@ -23,6 +24,7 @@ class PaymentServiceProvider extends ServiceProvider
 //                default => throw new \Exception("Unsupported gateway type"),
 //            };
 
+        $this->app->bind(PaymentGatewayInterface::class,GeideaPaymentService::class);
     }
 
     /**

@@ -24,12 +24,8 @@ class PaymentController extends Controller
 
     public function callBack(Request $request): \Illuminate\Http\RedirectResponse
     {
-        $response = $this->paymentGateway->callBack($request);
-        if ($response) {
+        return $this->paymentGateway->callBack($request);
 
-            return redirect()->route('payment.success');
-        }
-        return redirect()->route('payment.failed');
     }
 
 
