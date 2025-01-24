@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Interfaces\PaymentGatewayInterface;
+use App\Services\MoyasarPaymentService;
 use App\Services\PaymobPaymentService;
 use App\Services\PaypalPaymentService;
 use Illuminate\Support\ServiceProvider;
@@ -23,7 +24,7 @@ class PaymentServiceProvider extends ServiceProvider
 //                default => throw new \Exception("Unsupported gateway type"),
 //            };
 
-        $this->app->bind(PaymentGatewayInterface::class,PaypalPaymentService::class);
+        $this->app->bind(PaymentGatewayInterface::class,MoyasarPaymentService::class);
     }
 
     /**
